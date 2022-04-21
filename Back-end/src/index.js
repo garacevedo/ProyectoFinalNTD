@@ -2,6 +2,7 @@
 Instalar express
 MOONGOSE 
 DOTENV
+bcrypt
 */
 const parser = require("body-parser");
 const mongoose = require("mongoose")
@@ -9,9 +10,11 @@ const express = require('express')
 const app =  express()
 const port = 3000
 const userRoutes = require("./routes/r_users");
-//const authRoutes = require("./routes/authentication");
+const authRoutes = require("./routes/authentication")
+
 
 require('dotenv').config();
+
 
 app.use(parser.urlencoded({extend: false}));  // permite leer los datos que vienen en la petición
 app.use(parser.json()); // transformar los datos a formato json
@@ -20,7 +23,7 @@ app.use(parser.json()); // transformar los datos a formato json
 
 // Gestión de las rutas usando el middleware
 app.use("/api", userRoutes);
-//app.use("/api", authRoutes);
+app.use("/api", authRoutes);
 app.use(express.json());
 
 
@@ -41,4 +44,3 @@ app.get('/', (req,res) => {
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 });
-///Back-end/src/routes/r_users.js
