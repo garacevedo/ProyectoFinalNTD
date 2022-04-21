@@ -33,6 +33,8 @@ router.post('/login', async(req, res) => {
     if (!user) return res.status(400).json({ error: 'Usuario no encontrado' });
     
     const validPassword = await bcrypt.compare(req.body.clave, user.clave);
+    console.log(req.body.clave);
+    console.log(user.clave);
     if (!validPassword) return res.status(400).json({ error: 'contraseña no válida' });
 
     res.json({
