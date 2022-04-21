@@ -6,7 +6,6 @@ const userSchema = mongoose.Schema({
         required: true
     },
     correo: {
-
         type: String,
         required: true
     },
@@ -15,4 +14,4 @@ const userSchema = mongoose.Schema({
     required: true
     }
 });
-module.exports = mongoose.model('Animal', userSchema);
+module.exports = mongoose.model('Usuario', userSchema);
