@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const userSchema = require("../models/m_users");
+const userSchema = require("../models/m_curriculum");
 //insertar los datos correspondientes a la hoja de vida
 router.post("/users", (req, res) => {
     const user = userSchema(req.body);
