@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const userSchema = require("../models/m_users");
+const curriculumSchema = require("../models/m_curriculum");
 //const verifyToken = require('./validate_token');
 
 // COMIENZO DEL CRUD:
@@ -49,12 +50,27 @@ router.get("/users_where", (req, res) => {
 */
 
 // U: Actualizar 
-router.put("/users/:id", (req, res) => {
+router.put("/users/:id", async(req, res) => {
     const { id } = req.params;
-    const { nombre, correo, clave } = req.body;
+    //const { nombre, correo, clave } = req.body;
+    const curriculum = curriculumSchema(req.params);
+    var idCurriculum = null;
+    
+
+    const curriculumConsulta = await curriculumSchema.findOne({nombre_curriculum: req.body.nombre_curriculum});
+    console.log(req.body.idiomas);
+    if(!curriculumConsulta){
+        await curriculum.save().then((dataCurriculum) => {
+            idCurriculum = dataCurriculum.id_;
+        });
+    }else{
+        idCurriculum = curriculumConsulta.id_;
+    }
+
     userSchema
         .updateOne({ _id: id}, {
-            $set: {nombre, correo, clave }
+            //$set: {nombre, correo, clave }
+            $addToSet: {curriculums: idCurriculum}
         })
         .then((data) => res.json(data))
         .catch((error) => req.json({ message : error}));

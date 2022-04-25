@@ -12,7 +12,7 @@ const userSchema = mongoose.Schema({
     },
     clave: {
         type: String,
-    required: true
+        required: true
     },
     curriculums : [{ type: mongoose.Schema.Types.ObjectId, ref: 'Curriculum'}]
 });

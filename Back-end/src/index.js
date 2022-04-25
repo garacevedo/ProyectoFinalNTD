@@ -11,6 +11,7 @@ const app =  express()
 const port = 3000
 const userRoutes = require("./routes/r_users");
 const authRoutes = require("./routes/authentication")
+const curriculimRoutes = require("./routes/r_curriculum")
 
 
 require('dotenv').config();
@@ -24,6 +25,7 @@ app.use(parser.json()); // transformar los datos a formato json
 // Gestión de las rutas usando el middleware
 app.use("/api", userRoutes);
 app.use("/api", authRoutes);
+app.use("/api",  curriculimRoutes)
 app.use(express.json());
 
 
