@@ -7,22 +7,6 @@ const curriculumSchema = mongoose.Schema({
         required: true
         //unique: true
     },
-    nombre: {
-        type: String,
-        required: true
-    },
-    direccion: {
-        type: String,
-        required: true
-    },
-    telefono: {
-        type: Number,
-        required: true
-    },
-    correo: {
-        type: String,
-        required: true
-    },
     pagina_web: [{
         nombre_pagina: {type: String, required: true},
         url : {type: String, required: true}
@@ -57,6 +41,10 @@ const curriculumSchema = mongoose.Schema({
         descripcion : {type: String, required: true}
     }],
     idiomas: {
+        type: String,
+        required: true
+    },
+    tipo_curriculum:{
         type: String,
         required: true
     }

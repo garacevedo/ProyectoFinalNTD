@@ -6,11 +6,15 @@ const bcrypt = require("bcrypt")
 
 
 router.post('/signup', async(req, res) => {
-    const { nombre, correo, clave } = req.body;
+    const { usuario, nombre, correo, clave, direccion, telefono, curriculums} = req.body;
     const user = new userSchema({
+        usuario: usuario,
         nombre: nombre,
         correo: correo,
-        clave: clave
+        clave: clave,
+        direccion: direccion,
+        telefono:telefono,
+        curriculums: curriculums
     });
     user.clave = await user.encryptClave(user.clave);
     await user.save(); //save es un método de mongoose para guardar datos en MongoDB 
@@ -41,7 +45,12 @@ router.post('/login', async(req, res) => {
         error: null,
         data: 'Esoooooooo exito bienvenido'
     })
-    
+/*
+{        
+        "correo": "gabriel@gmail.com",
+        "clave": "123456"
+}
+*/
 
 /*
     //primer parámetro: payload - un dato que se agrega para generar el token
