@@ -13,7 +13,8 @@ const userSchema = mongoose.Schema({
     clave: {
         type: String,
     required: true
-    }
+    },
+    curriculums : [{ type: mongoose.Schema.Types.ObjectId, ref: 'Curriculum'}]
 });
 
 userSchema.methods.encryptClave = async(clave) => {
