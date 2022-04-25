@@ -31,7 +31,7 @@ router.get("/users/:id", (req, res) => {
     const { id } = req.params;
     userSchema
         .findById(id)
-        .then((data) => res.json(data))
+        .then((data) => res.json({"nombre":data.nombre,"correo": data.correo}))
         .catch((error) => req.json({ message: error }));
 });
 
@@ -53,27 +53,33 @@ router.get("/users_where", (req, res) => {
 router.put("/users/:id", async(req, res) => {
     const { id } = req.params;
     //const { nombre, correo, clave } = req.body;
-    const curriculum = curriculumSchema(req.params);
+    const curriculum = curriculumSchema(req.body);
     var idCurriculum = null;
     
 
     const curriculumConsulta = await curriculumSchema.findOne({nombre_curriculum: req.body.nombre_curriculum});
-    console.log(req.body.idiomas);
+    //console.log(req.body.nombre_curriculum+" bodyyyyyyyyy");
     if(!curriculumConsulta){
         await curriculum.save().then((dataCurriculum) => {
-            idCurriculum = dataCurriculum.id_;
+            idCurriculum = dataCurriculum._id;
+            console.log(idCurriculum+" iddd 1");
         });
+        console.log("Entro al if");
     }else{
-        idCurriculum = curriculumConsulta.id_;
+        idCurriculum = curriculumConsulta._id;
+        console.log("Entro al else");
+        console.log(curriculumConsulta.id_+" iddd 2");
     }
-
-    userSchema
+    
+    await userSchema
         .updateOne({ _id: id}, {
             //$set: {nombre, correo, clave }
             $addToSet: {curriculums: idCurriculum}
+            
         })
         .then((data) => res.json(data))
         .catch((error) => req.json({ message : error}));
+        
 });
 
 

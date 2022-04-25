@@ -37,8 +37,7 @@ const curriculumSchema = mongoose.Schema({
         fecha_inicio : {type: Date, required: true},
         fecha_fin : {type: String, required: true},
         descripcion : {type: String, required: true}
-        
-
+    
     }],
     formacion_academica: [{
         titulo : {type: String, required: true},
