@@ -18,12 +18,12 @@ export class UserService {
 
 
   // REGISTRO E INICIO DE SESIÓN
-  userSignUp(): Observable<any> {
+  userSignUp(data: any): Observable<any> {
     return this.http.get<any>(this.apiuri_signup);
   }
 
-  userLogin(): Observable<any> {
-    return this.http.get<any>(this.apiuri_login);
+  userLogin(data: any): Observable<any> {
+    return this.http.post<any>(this.apiuri_login, data);
   }
 
 
