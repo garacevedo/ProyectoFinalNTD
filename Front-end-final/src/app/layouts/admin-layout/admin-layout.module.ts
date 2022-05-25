@@ -17,6 +17,10 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
+import { SignupComponent } from 'app/signup/signup.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { CurriculumComponent } from 'app/curriculum/curriculum.component';
+import { LoginComponent } from 'app/login/login.component';
 
 @NgModule({
   imports: [
@@ -30,6 +34,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatSnackBarModule,
   ],
   declarations: [
     DashboardComponent,
@@ -40,6 +45,9 @@ import {MatSelectModule} from '@angular/material/select';
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    SignupComponent,
+    LoginComponent,
+    CurriculumComponent
   ]
 })
 

@@ -4,27 +4,27 @@ const bcrypt = require("bcrypt")
 const userSchema = mongoose.Schema({
     usuario: {
         type: String,
-        required: true
+        required: false
     },
     nombre: {
         type: String,
-        required: true
+        required: false
     },
     correo: {
         type: String,
-        required: true
+        required: false
     },
     clave: {
         type: String,
-        required: true
+        required: false
     },
     direccion: {
         type: String,
-        required: true
+        required: false
     },
     telefono: {
         type: Number,
-        required: true
+        required: false
     },
     curriculums : [{ type: mongoose.Schema.Types.ObjectId, ref: 'Curriculum'}]
 });

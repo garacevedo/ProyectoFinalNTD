@@ -1,0 +1,490 @@
+<div class="main-content">
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-tabs card-header-primary">
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <span class="nav-tabs-title">Curriculums</span>
+                        <ul class="nav nav-tabs" data-tabs="tabs">
+                            <li class="nav-item">
+                                <a mat-button class="nav-link active" href="#nuevocv" data-toggle="tab">
+                                    <i class="material-icons">add</i> Nuevo Curriculum
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a mat-button class="nav-link" href="#editarcv" data-toggle="tab">
+                                    <i class="material-icons">edit</i> Editar Curriculum
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a mat-button class="nav-link" href="#listarcv" data-toggle="tab">
+                                    <i class="material-icons">list</i> Listar Curriculums
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="nuevocv">
+
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form (ngSubmit)="newCurriculumNC" [formGroup]="newCurriculumFormNombreCurriculum">
+                                        <div class="row">
+
+                                            <div class="col-md-6">
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Nombre del Curriculum" type="text"
+                                                        formControlName="correo">
+                                                </mat-form-field>
+                                            </div>
+
+                                        </div>
+                                        <button mat-raised-button type="submit"
+                                            class="btn btn-danger pull-right">Aceptar</button>
+                                        <div class="clearfix"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div id="card-1">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a class="card-link" data-toggle="collapse" data-parent="#card-1"
+                                                    href="#card-element-1">Página
+                                                    web propia</a>
+                                            </div>
+                                            <div id="card-element-1" class="collapse show">
+                                                <div class="card-body">
+                                                    <form (ngSubmit)="newCurriculumPaginaWeb()"
+                                                        [formGroup]="newCurriculumFormPaginaWeb">
+                                                        <div class="row">
+
+                                                            <div class="col-md-4">
+                                                                <mat-form-field class="example-full-width">
+                                                                    <input matInput
+                                                                        placeholder="Nombre de la página web"
+                                                                        type="text" formControlName="nombre_pagina">
+                                                                </mat-form-field>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <mat-form-field class="example-full-width">
+                                                                    <input matInput placeholder="Url de la página web"
+                                                                        type="text" formControlName="url">
+                                                                </mat-form-field>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                        <button mat-raised-button type="submit"
+                                                            class="btn btn-danger pull-right">Aceptar</button>
+                                                        <div class="clearfix"></div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a class="collapsed card-link" data-toggle="collapse"
+                                                    data-parent="#card-1" href="#card-element-2">Perfil Profesional</a>
+                                            </div>
+                                            <div id="card-element-2" class="collapse">
+                                                <div class="card-body">
+                                                    <form (ngSubmit)="newCurriculumPerfilProfesional()"
+                                                        [formGroup]="newCurriculumFormPerfilProfesional">
+                                                        <div class="row">
+
+                                                            <div class="col-md-8">
+                                                                <mat-form-field class="example-full-width">
+                                                                    <input matInput
+                                                                        placeholder="Nombre de la página web"
+                                                                        type="text"
+                                                                        formControlName="perfil_profesional">
+                                                                </mat-form-field>
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                        <button mat-raised-button type="submit"
+                                                            class="btn btn-danger pull-right">Aceptar</button>
+                                                        <div class="clearfix"></div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a class="collapsed card-link" data-toggle="collapse"
+                                                    data-parent="#card-1" href="#card-element-5">Reconocimientos</a>
+                                            </div>
+                                            <div id="card-element-5" class="collapse">
+                                                <div class="card-body">
+                                                    <form (ngSubmit)="newCurriculumReconocimientos()"
+                                                        [formGroup]="newCurriculumFormReconocimientos">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                <mat-form-field class="example-full-width">
+                                                                    <input matInput placeholder="Título Reconocimiento"
+                                                                        type="text" formControlName="nombre_r">
+                                                                </mat-form-field>
+                                                            </div>
+
+                                                        </div>
+
+
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <mat-form-field class="example-full-width">
+                                                                    <input matInput placeholder="Fecha de Inicio"
+                                                                        type="date" formControlName="fecha_inicio_r">
+                                                                </mat-form-field>
+                                                            </div>
+
+
+                                                            <div class="col-md-4">
+                                                                <mat-form-field class="example-full-width">
+                                                                    <input matInput placeholder="Fecha de finalización"
+                                                                        type="text" formControlName="fecha_fin_r">
+                                                                </mat-form-field>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                <mat-form-field class="example-full-width">
+                                                                    <input matInput
+                                                                        placeholder="Descripción del reconocimiento"
+                                                                        type="textarea" formControlName="descripcion_r">
+                                                                </mat-form-field>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <button mat-raised-button type="submit"
+                                                            class="btn btn-danger pull-right">Aceptar</button>
+                                                        <div class="clearfix"></div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <a class="collapsed card-link" data-toggle="collapse"
+                                                    data-parent="#card-1" href="#card-element-7">Idiomas</a>
+                                            </div>
+                                            <div id="card-element-7" class="collapse">
+                                                <div class="card-body">
+                                                    <form (ngSubmit)="newCurriculumIdiomas()"
+                                                        [formGroup]="newCurriculumFormIdiomas">
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                <mat-form-field class="example-full-width">
+                                                                    <input matInput placeholder="Idiomas" type="text"
+                                                                        formControlName="idiomas">
+                                                                </mat-form-field>
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                        <button mat-raised-button type="submit"
+                                                            class="btn btn-danger pull-right">Aceptar</button>
+                                                        <div class="clearfix"></div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a class="collapsed card-link" data-toggle="collapse" data-parent="#card-1"
+                                                href="#card-element-3">Experiencia</a>
+                                        </div>
+                                        <div id="card-element-3" class="collapse">
+                                            <div class="card-body">
+                                                <form (ngSubmit)="newCurriculumPerfilProfesional()"
+                                                    [formGroup]="newCurriculumFormPerfilProfesional">
+                                                    <div class="row">
+                                                        <div class="col-md-8">
+                                                            <mat-form-field class="example-full-width">
+                                                                <input matInput placeholder="Puesto laboral" type="text"
+                                                                    formControlName="puesto_laboral">
+                                                            </mat-form-field>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-8">
+                                                            <mat-form-field class="example-full-width">
+                                                                <input matInput placeholder="Empleador" type="text"
+                                                                    formControlName="empleador">
+                                                            </mat-form-field>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <mat-form-field class="example-full-width">
+                                                                <input matInput placeholder="Fecha de Inicio"
+                                                                    type="date" formControlName="fecha_inicio">
+                                                            </mat-form-field>
+                                                        </div>
+
+
+                                                        <div class="col-md-4">
+                                                            <mat-form-field class="example-full-width">
+                                                                <input matInput placeholder="Fecha de finalización"
+                                                                    type="text" formControlName="fecha_fin">
+                                                            </mat-form-field>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-8">
+                                                            <mat-form-field class="example-full-width">
+                                                                <input matInput placeholder="Descripción del cargo"
+                                                                    type="textarea" formControlName="descripcion">
+                                                            </mat-form-field>
+                                                        </div>
+
+                                                    </div>
+
+
+
+
+                                                    <button mat-raised-button type="submit"
+                                                        class="btn btn-danger pull-right">Aceptar</button>
+                                                    <div class="clearfix"></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a class="collapsed card-link" data-toggle="collapse" data-parent="#card-1"
+                                                href="#card-element-4">Formación academica</a>
+                                        </div>
+                                        <div id="card-element-4" class="collapse">
+                                            <div class="card-body">
+                                                <form (ngSubmit)="newCurriculumFormacionAcademica()"
+                                                    [formGroup]="newCurriculumFormFormacionAcademica">
+                                                    <div class="row">
+                                                        <div class="col-md-8">
+                                                            <mat-form-field class="example-full-width">
+                                                                <input matInput placeholder="Título" type="text"
+                                                                    formControlName="titulo">
+                                                            </mat-form-field>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-8">
+                                                            <mat-form-field class="example-full-width">
+                                                                <input matInput placeholder="Universidad / Entidad"
+                                                                    type="text" formControlName="universidad_entidad">
+                                                            </mat-form-field>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <mat-form-field class="example-full-width">
+                                                                <input matInput placeholder="Fecha de Inicio"
+                                                                    type="date" formControlName="fecha_inicio_fa">
+                                                            </mat-form-field>
+                                                        </div>
+
+
+                                                        <div class="col-md-4">
+                                                            <mat-form-field class="example-full-width">
+                                                                <input matInput placeholder="Fecha de finalización"
+                                                                    type="text" formControlName="fecha_fin_fa">
+                                                            </mat-form-field>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-8">
+                                                            <mat-form-field class="example-full-width">
+                                                                <input matInput
+                                                                    placeholder="Descripción de la formación"
+                                                                    type="textarea" formControlName="descripcion_fa">
+                                                            </mat-form-field>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <button mat-raised-button type="submit"
+                                                        class="btn btn-danger pull-right">Aceptar</button>
+                                                    <div class="clearfix"></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a class="collapsed card-link" data-toggle="collapse" data-parent="#card-1"
+                                                href="#card-element-6">Proyectos</a>
+                                        </div>
+                                        <div id="card-element-6" class="collapse">
+                                            <div class="card-body">
+                                                <form (ngSubmit)="newCurriculumProyectos()"
+                                                    [formGroup]="newCurriculumFormProyectos">
+                                                    <div class="row">
+                                                        <div class="col-md-8">
+                                                            <mat-form-field class="example-full-width">
+                                                                <input matInput placeholder="Nombre del proyecto"
+                                                                    type="text" formControlName="nombre_p">
+                                                            </mat-form-field>
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <div class="row">
+                                                        <div class="col-md-8">
+                                                            <mat-form-field class="example-full-width">
+                                                                <input matInput placeholder="Descripción del proyecto"
+                                                                    type="textarea" formControlName="descripcion_p">
+                                                            </mat-form-field>
+                                                        </div>
+
+                                                    </div>
+
+                                                    <button mat-raised-button type="submit"
+                                                        class="btn btn-danger pull-right">Aceptar</button>
+                                                    <div class="clearfix"></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <a class="collapsed card-link" data-toggle="collapse" data-parent="#card-1"
+                                                href="#card-element-8">Tipo Curriculum</a>
+                                        </div>
+                                        <div id="card-element-8" class="collapse">
+                                            <div class="card-body">
+                                                <form (ngSubmit)="newCurriculumTipoCurriculum()"
+                                                    [formGroup]="newCurriculumFormTipoCurriculum">
+                                                    <div class="row">
+                                                        <div class="col-md-8">
+                                                            <mat-form-field class="example-full-width">
+                                                                <input matInput placeholder="Tipo de curriculum"
+                                                                    type="text" formControlName="tipo_curriculum">
+                                                            </mat-form-field>
+                                                        </div>
+
+                                                    </div>
+
+
+
+                                                    <button mat-raised-button type="submit"
+                                                        class="btn btn-danger pull-right">Aceptar</button>
+                                                    <div class="clearfix"></div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane" id="editarcv">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form (ngSubmit)="newCurriculumNC" [formGroup]="newCurriculumFormNombreCurriculum">
+                                        <div class="row">
+
+                                            <div class="col-md-6">
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Nombre del Curriculum" type="text"
+                                                        formControlName="correo">
+                                                </mat-form-field>
+                                            </div>
+
+                                        </div>
+                                        <button mat-raised-button type="submit"
+                                            class="btn btn-danger pull-right">Aceptar</button>
+                                        <div class="clearfix"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="listarcv">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <h5 class="card-header">
+                        Card title
+                    </h5>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Card content
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        Card footer
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

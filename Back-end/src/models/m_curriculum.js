@@ -4,49 +4,49 @@ const bcrypt = require("bcrypt")
 const curriculumSchema = mongoose.Schema({
     nombre_curriculum: {
         type: String,
-        required: true
+        required: false
         //unique: true
     },
     pagina_web: [{
-        nombre_pagina: {type: String, required: true},
-        url : {type: String, required: true}
+        nombre_pagina: {type: String, required: false},
+        url : {type: String, required: false}
     }],
     perfil_profesional: {
         type: String,
-        required: true
+        required: false
     },
     experiencia: [{
-        puesto_laboral: {type: String, required: true},
-        empleador : {type: String, required: true},
-        fecha_inicio : {type: Date, required: true},
-        fecha_fin : {type: String, required: true},
-        descripcion : {type: String, required: true}
+        puesto_laboral: {type: String, required: false},
+        empleador : {type: String, required: false},
+        fecha_inicio : {type: Date, required: false},
+        fecha_fin : {type: String, required: false},
+        descripcion : {type: String, required: false}
     
     }],
     formacion_academica: [{
-        titulo : {type: String, required: true},
-        universidad_entidad : {type: String, required: true},
-        fecha_inicio : {type: Date, required: true},
-        fecha_fin : {type: String, required: true},
-        descripcion : {type: String, required: true}
+        titulo : {type: String, required: false},
+        universidad_entidad : {type: String, required: false},
+        fecha_inicio_fa : {type: Date, required: false},
+        fecha_fin_fa : {type: String, required: false},
+        descripcion_fa : {type: String, required: false}
     }],
     reconocimientos: [{
-        nombre : {type: String, required: true},
-        fecha_inicio : {type: Date, required: true},
-        fecha_fin : {type: String, required: true},
-        descripcion : {type: String, required: true}
+        nombre_r : {type: String, required: false},
+        fecha_inicio_r : {type: Date, required: false},
+        fecha_fin_r : {type: String, required: false},
+        descripcion_r : {type: String, required: false}
     }],
     proyectos: [{
-        nombre : {type: String, required: true},
-        descripcion : {type: String, required: true}
+        nombre_p : {type: String, required: false},
+        descripcion_p : {type: String, required: false}
     }],
     idiomas: {
         type: String,
-        required: true
+        required: false
     },
     tipo_curriculum:{
         type: String,
-        required: true
+        required: false
     }
 
 });

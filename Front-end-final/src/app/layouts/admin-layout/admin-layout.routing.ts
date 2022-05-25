@@ -8,6 +8,9 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { SignupComponent } from 'app/signup/signup.component';
+import { CurriculumComponent } from 'app/curriculum/curriculum.component';
+import { LoginComponent } from 'app/login/login.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -60,4 +63,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
+    { path: 'signup',        component: SignupComponent },
+    { path: 'login',        component: LoginComponent },
+    { path: 'curriculum',        component: CurriculumComponent },
 ];

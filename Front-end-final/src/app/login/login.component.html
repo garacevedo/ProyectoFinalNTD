@@ -1,0 +1,46 @@
+<p>login works!</p>
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Inicio Sesión</h4>
+                        <p class="card-category">Ingrese su correo y clave.</p>
+                    </div>
+                    <div class="card-body">
+
+                        <form (ngSubmit)="userLogin()" [formGroup]="userFormLogin">
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Email address" type="email"
+                                            formControlName="correo">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Clave" type="password" formControlName="clave">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+
+
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Iniciar
+                                sesion</button>
+                            <div class="clearfix"></div>
+                        </form>
+
+
+                        <div class="clearfix"></div>
+                        
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+</div>
