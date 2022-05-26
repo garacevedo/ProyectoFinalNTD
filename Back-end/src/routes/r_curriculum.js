@@ -34,14 +34,6 @@ router.get("/curriculum",  (req, res) => {
     
 });
 
-router.get("/curriculum:usuario",  (req, res) => {
-    const { usuario } = req.params;
-    curriculumSchema.find()
-        .findByUsuario(usuario)
-        .then((data) => res.json(data))
-        .catch((error) => req.json({message: error}));
-    
-});
 
 
 // U: Actualizar datos de la hoja de vida

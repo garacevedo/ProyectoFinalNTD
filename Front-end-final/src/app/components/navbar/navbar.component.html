@@ -33,6 +33,7 @@
                         <a class="dropdown-item" [routerLink]="['/login']">Inicia sesión</a>
                         <a class="dropdown-item" [routerLink]="['/signup']">Registrate</a>
                         <a class="dropdown-item" [routerLink]="['/edit-user']">Editar Usuario</a>
+                        <a class="dropdown-item" (click)="logOut()" [routerLink]="['/dashboard']">Cerrar Sesión</a>
                     </div>
                 </li>
      

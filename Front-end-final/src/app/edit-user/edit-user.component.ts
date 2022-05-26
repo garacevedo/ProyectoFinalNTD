@@ -30,15 +30,21 @@ export class EditUserComponent implements OnInit {
     private router: Router,
     private _snackBar: MatSnackBar) { }
 
-  ngOnInit(): void {
-    console.log(this.displayedColumns);
-    this.getAllUsers();
-    }
 
-  getAllUsers() {
-    this.userService.getUsersData().subscribe((data: {}) => {
+  user_id : String;
+  ngOnInit(): void {
+    //this.usuario = this.share.getUsuario();
+    console.log(localStorage.getItem('user_id'));
+    this.user_id = localStorage.getItem('user_id');
+    this.getUser();
+  }
+
+  getUser() {
+    this.userService.getOneUserData(this.user_id).subscribe((data: {}) => {
       console.log(data);
       this.userList = data;
+      console.log(this.userList);
+      
     })
   }
 

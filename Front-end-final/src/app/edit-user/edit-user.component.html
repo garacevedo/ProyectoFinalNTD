@@ -1,5 +1,5 @@
 <div class="main-content">
-
+    <h1>{{user_id}}</h1>
 
     <div class="col-md-12">
         <div class="card card-plain">
@@ -16,7 +16,7 @@
                     <table class="table">
                         <thead class=" text-primary">
                             <th>
-                                Usaurio
+                                Usuario
                             </th>
                             <th>
                                 Nombre
@@ -24,9 +24,7 @@
                             <th>
                                 Correo
                             </th>
-                            <th>
-                                Clave
-                            </th>
+                        
                             <th>
                                 Dirección
                             </th>
@@ -51,9 +49,7 @@
                                 <td>
                                     {{user.correo}}
                                 </td>
-                                <td>
-                                    {{user.clave}}
-                                </td>
+                                
                                 <td>
                                     {{user.direccion}}
                                 </td>
@@ -69,13 +65,7 @@
         </div>
     </div>
 
-<h2>No funciona</h2>
-<!--
-    <table mat-table [dataSource]="userList" class="mat-elevation-z8">
-        
-    </table>
 
--->
     <div *ngIf="editableUser">
         <h2>Editar User</h2>
         <form (ngSubmit)="updateUserEntry()" [formGroup]="userForm">

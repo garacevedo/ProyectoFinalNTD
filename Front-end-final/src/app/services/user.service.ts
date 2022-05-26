@@ -32,6 +32,14 @@ export class UserService {
     return this.http.get<any>(this.apiuri);
   }
 
+  getOneUserData(id: any): Observable<any> {
+    console.log(id)
+    return this.http.get<any>(
+      this.apiuri + '/' + id,
+      );
+    }
+
+
   newUser(data: any): Observable<any> {
     return this.http.post<any>(
       this.apiuri,
