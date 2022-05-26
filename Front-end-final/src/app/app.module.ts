@@ -34,7 +34,8 @@ import { CommonModule } from '@angular/common';
     MatSelectModule,
     MatTooltipModule,
     BrowserModule,
-    CommonModule
+    CommonModule,
+    
   ],
   declarations: [
     AppComponent,

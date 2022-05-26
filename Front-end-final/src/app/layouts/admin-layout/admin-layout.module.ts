@@ -22,6 +22,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CurriculumComponent } from 'app/curriculum/curriculum.component';
 import { LoginComponent } from 'app/login/login.component';
 import { EditUserComponent } from 'app/edit-user/edit-user.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { EditUserComponent } from 'app/edit-user/edit-user.component';
     MatSelectModule,
     MatTooltipModule,
     MatSnackBarModule,
+    MatTableModule
   ],
   declarations: [
     DashboardComponent,

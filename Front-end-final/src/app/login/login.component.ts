@@ -44,6 +44,7 @@ export class LoginComponent {
     }
   }
 
+  
   openMessage(message: string, action: string) {
     let snackBarRef = this._snackBar.open(message, action);
     if (message !== 'Falta información') {

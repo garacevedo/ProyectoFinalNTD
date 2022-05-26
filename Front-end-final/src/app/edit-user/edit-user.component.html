@@ -1,1 +1,119 @@
-<p>edit-user works!</p>
+<div class="main-content">
+
+
+    <div class="col-md-12">
+        <div class="card card-plain">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title mt-0"> Edita tú información</h4>
+
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<h2>No funciona</h2>
+<!--
+    <table mat-table [dataSource]="userList" class="mat-elevation-z8">
+        <ng-container matColumnDef="Usuario">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.usuario}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Nombre">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Correo">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.correo}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Clave">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.clave}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Direccion">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.direccion}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Telefono">
+            <th mat-header-cell *matHeaderCellDef> Tipo </th>
+            <td mat-cell *matCellDef="let element"> {{element.telefono}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="Modificar">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let element">
+                <div class="example-button-container">
+                    <button mat-icon-button color="accent" aria-label="Actualizar User"
+                        (click)="toggleEditUser(element._id)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Eliminar">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let element">
+                <div class="example-button-container">
+                    <button mat-icon-button color="accent" aria-label="Eliminar User"
+                        (click)="deleteUserEntry(element._id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+-->
+    <div *ngIf="editableUser">
+        <h2>Editar User</h2>
+        <form (ngSubmit)="updateUserEntry()" [formGroup]="userForm">
+            <mat-form-field appearance="fill">
+                <mat-label>Usuario</mat-label>
+                <input matInput formControlName="usaurio" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName="nombre" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Correo</mat-label>
+                <input matInput formControlName="correo" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Clave</mat-label>
+                <input matInput formControlName="clave" required>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Direccion</mat-label>
+                <input matInput formControlName="direccion" required>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="fill">
+                <mat-label>Telefono</mat-label>
+                <input matInput formControlName="telefono" required>
+            </mat-form-field>
+
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+        </form>
+    </div>
+
+</div>
