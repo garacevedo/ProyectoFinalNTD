@@ -30,11 +30,12 @@ module.exports = router;
 //inicio de sesión
 router.post('/login', async(req, res) => {
     // validaciones
+    
     const { error } = userSchema.validate(req.body.correo, req.body.clave);
     if (error) return res.status(400).json({ error: error.details[0].message });
     
     const user = await userSchema.findOne({ correo: req.body.correo }). then(data => {res.json(data)});
-    if (!user) return res.status(400).json({ error: 'Usuario no encontrado' });
+    /*if (!user) return res.status(400).json({ error: 'Usuario no encontrado' });
     
     const validPassword = await bcrypt.compare(req.body.clave, user.clave);
     console.log(req.body.clave);

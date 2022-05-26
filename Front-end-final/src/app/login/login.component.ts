@@ -37,6 +37,7 @@ export class LoginComponent {
       this.userFormLogin.value['clave'] === '') {
       this.openMessage("Falta informacion", "Cerrar");
     } else {
+      console.log(this.userFormLogin.value);
       this.userService.userLogin(this.userFormLogin.value).subscribe(
         (data) => {
           localStorage.setItem('user_id', data._id); 

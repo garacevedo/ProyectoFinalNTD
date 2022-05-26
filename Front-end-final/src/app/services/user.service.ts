@@ -23,6 +23,9 @@ export class UserService {
   }
 
   userLogin(data: any): Observable<any> {
+    
+    console.log("Hola");
+    console.log(data);
     return this.http.post<any>(this.apiuri_login, data);
   }
 

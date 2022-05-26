@@ -1,5 +1,5 @@
 <div class="main-content">
-    <h1>{{user_id}}</h1>
+    
     <div class="col-md-12">
         <div class="card">
             <div class="card-header card-header-tabs card-header-primary">
@@ -184,7 +184,7 @@
                                         </div>
 
                                         <button mat-raised-button type="submit"
-                                            class="btn btn-danger pull-right">Descargar</button>
+                                            class="btn btn-danger pull-right">Guardar</button>
 
                                     </form>
                                 </div>
@@ -192,37 +192,38 @@
                         </div>
 
 
-                        <div class="tab-pane" id="editarcv">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <form (ngSubmit)="newCurriculumNC"
-                                            [formGroup]="newCurriculumFormNombreCurriculum">
-                                            <div class="row">
+                        
+                    </div>
+                    <div class="tab-pane" id="editarcv">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <form (ngSubmit)="newCurriculumNC"
+                                        [formGroup]="newCurriculumFormNombreCurriculum">
+                                        <div class="row">
 
-                                                <div class="col-md-6">
-                                                    <mat-form-field class="example-full-width">
-                                                        <input matInput placeholder="Nombre del Curriculum" type="text"
-                                                            formControlName="correo">
-                                                    </mat-form-field>
-                                                </div>
-
+                                            <div class="col-md-6">
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Nombre del Curriculum" type="text"
+                                                        formControlName="correo">
+                                                </mat-form-field>
                                             </div>
 
-                                            <div class="clearfix"></div>
-                                        </form>
+                                        </div>
 
-                                    </div>
+                                        <div class="clearfix"></div>
+                                    </form>
+
                                 </div>
                             </div>
-
-                            <div class="clearfix"></div>
                         </div>
-                        <div class="tab-pane" id="listarcv">
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="tab-pane" id="listarcv">
 
 
 
-                        </div>
                     </div>
                 </div>
             </div>
