@@ -80,7 +80,7 @@ export class CurriculumComponent implements OnInit {
 
 
 
-  newCurriculumPaginaWeb() {
+  newCurriculumGeneral() {
     if (this.newCurriculumFormNombreCurriculum.value['usuario'] === '') {
       this.openMessage("Falta informacion", "Cerrar");
     } else {
@@ -97,125 +97,7 @@ export class CurriculumComponent implements OnInit {
     }
   }
 
-  newCurriculumPerfilProfesional() {
-    if (this.newCurriculumFormNombreCurriculum.value['usuario'] === '') {
-      this.openMessage("Falta informacion", "Cerrar");
-    } else {
-      this.curriculumService.newCurriculum(this.newCurriculumFormPerfilProfesional.value).subscribe(
-        () => {
-          //Redirigiendo a la ruta actual /User y recargando la ventana
-          //this.router.navigate(['/User']).then(() => {
-          //  window.location.reload();
-          //})
-          this.openMessage("User agregado exitosamente.", "Ir a inicio");
-        }
-
-      );
-    }
-  }
-
-  newCurriculumExperiencia() {
-    if (this.newCurriculumFormNombreCurriculum.value['usuario'] === '') {
-      this.openMessage("Falta informacion", "Cerrar");
-    } else {
-      this.curriculumService.newCurriculum(this.newCurriculumFormExperiencia.value).subscribe(
-        () => {
-          //Redirigiendo a la ruta actual /User y recargando la ventana
-          //this.router.navigate(['/User']).then(() => {
-          //  window.location.reload();
-          //})
-          this.openMessage("User agregado exitosamente.", "Ir a inicio");
-        }
-
-      );
-    }
-  }
-
-  newCurriculumFormacionAcademica() {
-    if (this.newCurriculumFormNombreCurriculum.value['usuario'] === '') {
-      this.openMessage("Falta informacion", "Cerrar");
-    } else {
-      this.curriculumService.newCurriculum(this.newCurriculumFormFormacionAcademica.value).subscribe(
-        () => {
-          //Redirigiendo a la ruta actual /User y recargando la ventana
-          //this.router.navigate(['/User']).then(() => {
-          //  window.location.reload();
-          //})
-          this.openMessage("User agregado exitosamente.", "Ir a inicio");
-        }
-
-      );
-    }
-  }
-
-  newCurriculumReconocimientos() {
-    if (this.newCurriculumFormNombreCurriculum.value['usuario'] === '') {
-      this.openMessage("Falta informacion", "Cerrar");
-    } else {
-      this.curriculumService.newCurriculum(this.newCurriculumFormReconocimientos.value).subscribe(
-        () => {
-          //Redirigiendo a la ruta actual /User y recargando la ventana
-          //this.router.navigate(['/User']).then(() => {
-          //  window.location.reload();
-          //})
-          this.openMessage("User agregado exitosamente.", "Ir a inicio");
-        }
-
-      );
-    }
-  }
-
-  newCurriculumProyectos() {
-    if (this.newCurriculumFormNombreCurriculum.value['usuario'] === '') {
-      this.openMessage("Falta informacion", "Cerrar");
-    } else {
-      this.curriculumService.newCurriculum(this.newCurriculumFormProyectos.value).subscribe(
-        () => {
-          //Redirigiendo a la ruta actual /User y recargando la ventana
-          //this.router.navigate(['/User']).then(() => {
-          //  window.location.reload();
-          //})
-          this.openMessage("User agregado exitosamente.", "Ir a inicio");
-        }
-
-      );
-    }
-  }
-
-  newCurriculumIdiomas() {
-    if (this.newCurriculumFormNombreCurriculum.value['usuario'] === '') {
-      this.openMessage("Falta informacion", "Cerrar");
-    } else {
-      this.curriculumService.newCurriculum(this.newCurriculumFormIdiomas.value).subscribe(
-        () => {
-          //Redirigiendo a la ruta actual /User y recargando la ventana
-          //this.router.navigate(['/User']).then(() => {
-          //  window.location.reload();
-          //})
-          this.openMessage("User agregado exitosamente.", "Ir a inicio");
-        }
-
-      );
-    }
-  }
-
-  newCurriculumTipoCurriculum() {
-    if (this.newCurriculumFormNombreCurriculum.value['usuario'] === '') {
-      this.openMessage("Falta informacion", "Cerrar");
-    } else {
-      this.curriculumService.newCurriculum(this.newCurriculumFormTipoCurriculum.value).subscribe(
-        () => {
-          //Redirigiendo a la ruta actual /User y recargando la ventana
-          //this.router.navigate(['/User']).then(() => {
-          //  window.location.reload();
-          //})
-          this.openMessage("User agregado exitosamente.", "Ir a inicio");
-        }
-
-      );
-    }
-  }
-
+  
   openMessage(message: string, action: string) {
     let snackBarRef = this._snackBar.open(message, action);
     if (message !== 'Falta información') {
