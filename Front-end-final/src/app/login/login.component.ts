@@ -38,10 +38,14 @@ export class LoginComponent {
       this.openMessage("Falta informacion", "Cerrar");
     } else {
       this.userService.userLogin(this.userFormLogin.value).subscribe(
-        () => {
+        (data) => {
+          localStorage.setItem('user_id', data._id); 
+          //this.share.setUsuario();
           //Redirigiendo a la ruta actual /User y recargando la ventana
           this.router.navigate(['/dashboard']).then(() => {
             window.location.reload();
+
+         // console.log(data);
           })
           //this.openMessage("User agregado", "Actualizar lista");
         }

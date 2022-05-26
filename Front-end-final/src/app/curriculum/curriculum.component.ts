@@ -14,6 +14,12 @@ import {ShareService} from 'app/services/share.service';
 
 export class CurriculumComponent implements OnInit {
 
+  newCurriculumGeneralDatos = this.formBuilder.group({
+    nombre_curriculum: '',
+    nombre_pagina: '',
+    url: ''
+  });
+
   newCurriculumFormNombreCurriculum = this.formBuilder.group({
     nombre_curriculum: '',
   });
@@ -63,15 +69,20 @@ export class CurriculumComponent implements OnInit {
     private _snackBar: MatSnackBar,
     private share: ShareService) { }
 
+  user_id : String;
   ngOnInit(): void {
-    this.usuario = this.share.getUsuario();
+    //this.usuario = this.share.getUsuario();
+    console.log(localStorage.getItem('user_id'));
+    this.user_id = localStorage.getItem('user_id');
   }
-  
+
+  arr :any=[];
   newCurriculumNC() {
-    if (this.newCurriculumFormNombreCurriculum.value['usuario'] === '') {
-      this.openMessage("Falta informacion", "Cerrar");
-    } else {
-      this.curriculumService.newCurriculum(this.newCurriculumFormNombreCurriculum.value).subscribe(
+    this.arr = {nombre_curriculum: this.newCurriculumGeneralDatos.value.nombre_curriculum,  pagina_web : [{nombre_pagina : this.newCurriculumGeneralDatos.value.nombre_pagina, 
+      url : this.newCurriculumGeneralDatos.value.url  }]} ;
+      console.log(this.arr);
+   
+      this.curriculumService.newCurriculum(this.arr).subscribe(
         () => {
           //Redirigiendo a la ruta actual /User y recargando la ventana
           //this.router.navigate(['/User']).then(() => {
@@ -81,7 +92,7 @@ export class CurriculumComponent implements OnInit {
         }
 
       );
-    }
+    
   }
 
 

@@ -37,6 +37,7 @@ export class EditUserComponent implements OnInit {
 
   getAllUsers() {
     this.userService.getUsersData().subscribe((data: {}) => {
+      console.log(data);
       this.userList = data;
     })
   }

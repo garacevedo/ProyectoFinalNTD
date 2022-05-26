@@ -1,5 +1,5 @@
 <div class="main-content">
-
+    <h1>{{user_id}}</h1>
     <div class="col-md-12">
         <div class="card">
             <div class="card-header card-header-tabs card-header-primary">
@@ -10,8 +10,8 @@
                             <li class="nav-item">
                                 <a mat-button class="nav-link active" href="#nuevocv" data-toggle="tab">
                                     <i class="material-icons">add</i>
-                                     Nuevo Curriculum
-                                     
+                                    Nuevo Curriculum
+
                                     <div class="ripple-container"></div>
                                 </a>
                             </li>
@@ -39,7 +39,7 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <form (ngSubmit)="newCurriculumNC" [formGroup]="newCurriculumFormNombreCurriculum">
+                                    <form (ngSubmit)="newCurriculumNC()" [formGroup]="newCurriculumGeneralDatos">
                                         <div class="row">
 
                                             <div class="col-md-6">
@@ -47,14 +47,33 @@
                                                     <input matInput placeholder="Nombre del Curriculum" type="text"
                                                         formControlName="nombre_curriculum">
                                                 </mat-form-field>
+
+
+                                            </div>
+                                            <div class="col-md-4">
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Nombre de la página web" type="text"
+                                                        formControlName="nombre_pagina">
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Url de la página web" type="text"
+                                                        formControlName="url">
+                                                </mat-form-field>
                                             </div>
 
                                         </div>
-                                        
+
+                                        <button mat-raised-button type="submit"
+                                            class="btn btn-danger pull-right">Descargar</button>
+
                                     </form>
                                 </div>
                             </div>
                         </div>
+
+                        <!--
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-6">
@@ -88,7 +107,7 @@
 
 
 
-                                                        
+
                                                         <div class="clearfix"></div>
                                                     </form>
                                                 </div>
@@ -119,7 +138,7 @@
 
 
 
-                                                        
+
                                                         <div class="clearfix"></div>
                                                     </form>
                                                 </div>
@@ -178,7 +197,7 @@
 
                                                         </div>
 
-                                                        
+
                                                         <div class="clearfix"></div>
                                                     </form>
                                                 </div>
@@ -280,7 +299,7 @@
 
 
 
-                                                    
+
                                                     <div class="clearfix"></div>
                                                 </form>
                                             </div>
@@ -342,7 +361,7 @@
 
                                                     </div>
 
-                                                    
+
                                                     <div class="clearfix"></div>
                                                 </form>
                                             </div>
@@ -379,7 +398,7 @@
 
                                                     </div>
 
-                                                    
+
                                                     <div class="clearfix"></div>
                                                 </form>
                                             </div>
@@ -407,22 +426,36 @@
 
 
 
-                                                    
+
                                                     <div class="clearfix"></div>
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
-                                    
+
 
                                 </div>
-                                
+
                             </div>
-                            <button mat-raised-button type="submit"
-                                            class="btn btn-danger pull-right">Descargar</button>
+                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Descargar</button>
                         </div>
 
+
+
                     </div>
+                    -->
+
+
+
+
+
+
+
+
+
+
+
+
                     <div class="tab-pane" id="editarcv">
                         <div class="container-fluid">
                             <div class="row">
@@ -438,20 +471,20 @@
                                             </div>
 
                                         </div>
-                                        
+
                                         <div class="clearfix"></div>
                                     </form>
 
                                 </div>
                             </div>
                         </div>
-                        
-                                        <div class="clearfix"></div>
+
+                        <div class="clearfix"></div>
                     </div>
                     <div class="tab-pane" id="listarcv">
-                        
-                        
-                        
+
+
+
                     </div>
                 </div>
             </div>
