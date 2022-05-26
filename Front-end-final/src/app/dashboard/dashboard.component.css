@@ -6,8 +6,9 @@ body{
   .container{
     margin: auto;
     background-color: white;
-    width: 800px;
-    padding: 30px;
+    width: 900px;
+    padding: 20px;
+    height: 400px;
   }
   
   ul, li {
@@ -18,7 +19,7 @@ body{
   
   ul.slider{
     position: relative;
-    width: 800px;
+    width: 900px;
     height: 300px;
   }
   
