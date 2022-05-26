@@ -21,6 +21,7 @@ import { SignupComponent } from 'app/signup/signup.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { CurriculumComponent } from 'app/curriculum/curriculum.component';
 import { LoginComponent } from 'app/login/login.component';
+import { EditUserComponent } from 'app/edit-user/edit-user.component';
 
 @NgModule({
   imports: [
@@ -47,7 +48,8 @@ import { LoginComponent } from 'app/login/login.component';
     UpgradeComponent,
     SignupComponent,
     LoginComponent,
-    CurriculumComponent
+    CurriculumComponent,
+    EditUserComponent,
   ]
 })
 

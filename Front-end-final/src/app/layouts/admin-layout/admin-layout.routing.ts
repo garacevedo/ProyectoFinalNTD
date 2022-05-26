@@ -11,6 +11,7 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { SignupComponent } from 'app/signup/signup.component';
 import { CurriculumComponent } from 'app/curriculum/curriculum.component';
 import { LoginComponent } from 'app/login/login.component';
+import { EditUserComponent } from 'app/edit-user/edit-user.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -66,4 +67,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'signup',        component: SignupComponent },
     { path: 'login',        component: LoginComponent },
     { path: 'curriculum',        component: CurriculumComponent },
+    { path: 'edit-user',        component: EditUserComponent },
 ];

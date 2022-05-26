@@ -17,6 +17,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/signup', title: 'Usuarios',  icon:'person', class: '' },
     { path: '/login', title: 'Login',  icon:'person', class: '' },
     { path: '/curriculum', title: 'Curriculum',  icon:'library_books', class: '' },
+    { path: '/edit-user', title: 'Editar User',  icon:'library_books', class: '' },
     
 ];
 
