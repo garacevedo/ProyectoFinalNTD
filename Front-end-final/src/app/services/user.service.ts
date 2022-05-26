@@ -33,7 +33,7 @@ export class UserService {
   }
 
   getOneUserData(id: any): Observable<any> {
-    console.log(id)
+    console.log("aaaaaaaaaa"+id)
     return this.http.get<any>(
       this.apiuri + '/' + id,
       );

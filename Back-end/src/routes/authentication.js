@@ -34,7 +34,14 @@ router.post('/login', async(req, res) => {
     if (error) return res.status(400).json({ error: error.details[0].message });
     
     const user = await userSchema.findOne({ correo: req.body.correo }). then(data => {res.json(data)});
-    if (!user) return res.status(400).json({ error: 'Usuario no encontrado' });
+    if (!user){
+        res.sendStatus(400).json({
+            status_code: 1,
+            data: req.body,
+            error: 'Usuario no encontrado'
+          });
+    } //return res.status(400).json({ error: 'Usuario no encontrado' });
+    
     
     const validPassword = await bcrypt.compare(req.body.clave, user.clave);
     console.log(req.body.clave);
@@ -49,6 +56,7 @@ router.post('/login', async(req, res) => {
 {        
         "correo": "gabriel@gmail.com",
         "clave": "123456"
+
 }
 */
 
