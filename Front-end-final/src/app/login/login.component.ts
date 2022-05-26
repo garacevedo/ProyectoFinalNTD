@@ -3,6 +3,9 @@ import { FormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Route, Router } from '@angular/router';
 import { UserService } from 'app/services/user.service';
+import {ShareService} from 'app/services/share.service';
+
+
 declare var $: any;
 @Component({
   selector: 'app-login',
@@ -21,7 +24,10 @@ export class LoginComponent {
   constructor(private userService: UserService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private _snackBar: MatSnackBar) { }
+    private _snackBar: MatSnackBar,
+    private share: ShareService) { }
+
+    //share = this.userFormLogin.value['correo'];
 
   ngOnInit(): void {
   }

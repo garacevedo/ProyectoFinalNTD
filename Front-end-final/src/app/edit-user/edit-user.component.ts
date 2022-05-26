@@ -31,10 +31,11 @@ export class EditUserComponent implements OnInit {
     private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
-    this.getAllAnimals();
+    console.log(this.displayedColumns);
+    this.getAllUsers();
     }
 
-  getAllAnimals() {
+  getAllUsers() {
     this.userService.getUsersData().subscribe((data: {}) => {
       this.userList = data;
     })

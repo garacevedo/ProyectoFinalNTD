@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { CurriculumService } from 'app/services/curriculum.service';
+import {ShareService} from 'app/services/share.service';
 
 
 @Component({
@@ -10,6 +11,7 @@ import { CurriculumService } from 'app/services/curriculum.service';
   templateUrl: './curriculum.component.html',
   styleUrls: ['./curriculum.component.scss']
 })
+
 export class CurriculumComponent implements OnInit {
 
   newCurriculumFormNombreCurriculum = this.formBuilder.group({
@@ -53,13 +55,18 @@ export class CurriculumComponent implements OnInit {
     tipo_curriculum: ''
 
   });
+
+  usuario:string;
   constructor(private curriculumService: CurriculumService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private _snackBar: MatSnackBar) { }
+    private _snackBar: MatSnackBar,
+    private share: ShareService) { }
 
   ngOnInit(): void {
+    this.usuario = this.share.getUsuario();
   }
+  
   newCurriculumNC() {
     if (this.newCurriculumFormNombreCurriculum.value['usuario'] === '') {
       this.openMessage("Falta informacion", "Cerrar");
