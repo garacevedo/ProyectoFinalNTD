@@ -9,7 +9,9 @@
                         <ul class="nav nav-tabs" data-tabs="tabs">
                             <li class="nav-item">
                                 <a mat-button class="nav-link active" href="#nuevocv" data-toggle="tab">
-                                    <i class="material-icons">add</i> Nuevo Curriculum
+                                    <i class="material-icons">add</i>
+                                     Nuevo Curriculum
+                                     
                                     <div class="ripple-container"></div>
                                 </a>
                             </li>
@@ -31,54 +33,13 @@
             </div>
             <div class="card-body">
                 <div class="tab-content">
-                    
                     <div class="tab-pane active" id="nuevocv">
-                        <div>
-                            <div class="card-header card-header-tabs card-header-primary">
-                                <div class="nav-tabs-navigation">
-                                    <div class="nav-tabs-wrapper">
-                                        <span class="nav-tabs-title">Curriculums</span>
-                                        <ul class="nav nav-tabs" data-tabs="tabs">
-                                            <li class="nav-item">
-                                                <a mat-button class="nav-link active" href="#plantilla1" data-toggle="tab">
-                                                    <i class="material-icons">add</i> Nuevo Curriculum
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a mat-button class="nav-link" href="#plantilla2" data-toggle="tab">
-                                                    <i class="material-icons">edit</i> plantilla 2
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a mat-button class="nav-link" href="#listarcv" data-toggle="tab">
-                                                    <i class="material-icons">list</i> Listar Curriculums
-                                                    <div class="ripple-container"></div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane active" id="plantilla1">
-                            <div class="container-fluid">
-                                <h1>Hola</h1>
+                        <h2>Plantilla 1</h2>
 
-                            </div>
-                            </div>
-                            <div class="tab-pane active" id="plantilla2">
-                                <div class="container-fluid">
-                                    <h1>Hola 2</h1>
-    
-                                </div>
-                                </div>
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-6">
-                                    
-                                    <form (ngSubmit)="newCurriculumNC()" [formGroup]="newCurriculumFormNombreCurriculum">
+                                    <form (ngSubmit)="newCurriculumNC" [formGroup]="newCurriculumFormNombreCurriculum">
                                         <div class="row">
 
                                             <div class="col-md-6">
@@ -90,7 +51,6 @@
 
                                         </div>
                                         
-                                        <div class="clearfix"></div>
                                     </form>
                                 </div>
                             </div>
@@ -250,8 +210,6 @@
 
 
 
-                                                        
-                                                        <div class="clearfix"></div>
                                                     </form>
                                                 </div>
                                             </div>
@@ -455,10 +413,13 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    
 
                                 </div>
+                                
                             </div>
+                            <button mat-raised-button type="submit"
+                                            class="btn btn-danger pull-right">Aceptar</button>
                         </div>
 
                     </div>
@@ -480,13 +441,16 @@
                                         
                                         <div class="clearfix"></div>
                                     </form>
+
                                 </div>
                             </div>
                         </div>
+                        
+                                        <div class="clearfix"></div>
                     </div>
-                    <button mat-raised-button type="submit"
-                                            class="btn btn-danger pull-right">Aceptar</button>
                     <div class="tab-pane" id="listarcv">
+                        
+                        
                         
                     </div>
                 </div>
