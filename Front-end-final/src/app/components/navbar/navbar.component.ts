@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
 import { Router } from '@angular/router';
-
+declare var $: any;
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -121,5 +121,42 @@ export class NavbarComponent implements OnInit {
           }
       }
       return 'Dashboard';
+    }
+
+
+    showNotification(from, align){
+        const type = ['','info','success','warning','danger'];
+    
+        const color = Math.floor((Math.random() * 4) + 1);
+    
+        $.notify({
+            icon: "notifications",
+            message: "<strong>¡Felicidades!</strong> Has  cerrado sesión con exito"
+    
+        },{
+            type: type[color],
+            timer: 4000,
+            placement: {
+                from: from,
+                align: align
+            },
+            template: '<div data-notify="container" class="col-xl-4 col-lg-4 col-11 col-sm-4 col-md-4 alert alert-info alert-with-icon" role="alert">' +
+              '<button mat-button  type="button" aria-hidden="true" class="close mat-button" data-notify="dismiss">  <i class="material-icons">close</i></button>' +
+              '<i class="material-icons" data-notify="icon">notifications</i> ' +
+              '<span data-notify="title">{1}</span> ' +
+              '<span data-notify="message">{2}</span>' +
+              '<div class="progress" data-notify="progressbar">' +
+                '<div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
+              '</div>' +
+              '<a href="{3}" target="{4}" data-notify="url"></a>' +
+            '</div>'
+        });
+    }
+    
+    logOut(){
+        localStorage.removeItem('user_id');
+        //alert("Se cerró sesión correctamente.");
+        console.log(localStorage.getItem('user_id'));
+        this.showNotification('top','center')
     }
 }
